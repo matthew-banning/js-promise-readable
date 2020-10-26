@@ -18,9 +18,9 @@ export class PromiseReadable<TReadable extends ReadableStream> implements AsyncI
     stream.on("error", this.errorHandler)
   }
 
-  static [Symbol.hasInstance](instance: any): boolean {
-    return instance._isPromiseReadable
-  }
+  // static [Symbol.hasInstance](instance: any): boolean {
+  //   return instance._isPromiseReadable
+  // }
 
   read(size?: number): Promise<Buffer | string | undefined> {
     const stream = this.stream
